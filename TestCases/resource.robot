@@ -8,7 +8,7 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${BROWSER}        Chrome
-${DELAY}          0
+${DELAY}          0.5
 ${VALID USER}     demo
 ${VALID PASSWORD}    mode
 ${LOGIN URL}      https://github.com/login
@@ -33,3 +33,33 @@ Input Password
 
 Submit Credentials
     Click Button    name=commit
+
+Login in Page
+    Open Browser To Login Page
+    Input Username    josemanuelep
+    Input Password    3103331899jose
+    Submit Credentials
+
+Open View Profile and More Toggle Menu
+    Click Element    xpath=//summary[contains(@aria-label, 'View profile and more')]
+    set browser implicit wait    5
+    wait until element is visible    xpath=//a[contains(text(),'Your repositories')]
+    Click Element    xpath=//a[contains(text(),'Your repositories')]
+    title should be    Your Repositories
+
+Filter by
+    [Arguments]    ${filer}
+    wait until element is visible  xpath=//details[@id='type-options']
+    click element  xpath=//details[@id='type-options']
+    set selenium implicit wait    5s
+    wait until element is visible    //span[contains(@class, 'text-normal') and text() = '${filer}']
+    click element    //span[contains(@class, 'text-normal') and text() = '${filer}']
+
+Filter own repositories by
+    [Arguments]    ${filter}
+    Open View Profile and More Toggle Menu
+    Filter by    ${filter}
+   [Teardown]    Close Browser
+
+#Close Browser
+#    [Teardown]    Close Browser
