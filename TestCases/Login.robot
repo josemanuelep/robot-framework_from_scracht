@@ -3,15 +3,19 @@ Documentation     A test suite with a single test for valid login.
 ...
 ...               This test has a workflow that is created using keywords in
 ...               the imported resource file.
-Suite Setup    Login in Page
-Resource    resource.robot
+Test Setup     Open Browser To Login Page
+Test Teardown  Close Browser
+Resource  resource.robot
 
 *** Test Cases ***
-#Valid Login in Gitlab
-    Login in Page
-    [Teardown]    Close Browser
+# Filter repos 
+#     [Template]  Filter Own Repositories By ${filter}
+#     Private    
+#     Public     
+  
 
 Filter repos
- Filter own repositories by    Private
+    Login in Page
+    Filter own repositories by  Private
 
-
+     

@@ -4,7 +4,7 @@ Documentation     A resource file with reusable keywords and variables.
 ...               The system specific keywords created here form our own
 ...               domain specific language. They utilize keywords provided
 ...               by the imported SeleniumLibrary.
-Library    SeleniumLibrary
+Library    Selenium2Library
 
 *** Variables ***
 ${BROWSER}        Chrome
@@ -35,7 +35,6 @@ Submit Credentials
     Click Button    name=commit
 
 Login in Page
-    Open Browser To Login Page
     Input Username    josemanuelep
     Input Password    3103331899jose
     Submit Credentials
@@ -48,18 +47,15 @@ Open View Profile and More Toggle Menu
     title should be    Your Repositories
 
 Filter by
-    [Arguments]    ${filer}
+    [Arguments]    ${filter}
     wait until element is visible  xpath=//details[@id='type-options']
     click element  xpath=//details[@id='type-options']
     set selenium implicit wait    5s
-    wait until element is visible    //span[contains(@class, 'text-normal') and text() = '${filer}']
-    click element    //span[contains(@class, 'text-normal') and text() = '${filer}']
+    wait until element is visible    //span[contains(@class, 'text-normal') and text() = '${filter}']
+    click element    //span[contains(@class, 'text-normal') and text() = '${filter}']
 
-Filter own repositories by
+Filter own repositories by 
     [Arguments]    ${filter}
     Open View Profile and More Toggle Menu
-    Filter by    ${filter}
-   [Teardown]    Close Browser
+    Filter by  ${filter}
 
-#Close Browser
-#    [Teardown]    Close Browser
