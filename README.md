@@ -23,3 +23,20 @@
 
 docker run --rm -v $(pwd):/workspace -w /workspace robotvozybase:latest python3 -m robot --outputdir ./Report .
 
+### Local chorme driver instance for robot
+
+`Open Chrome Browser
+    ${disabled}    Create List    Chrome PDF Viewer
+    ${prefs}    Create Dictionary    download.default_directory=${OUTPUT DIR}     plugins.plugins_disabled=${disabled}
+    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
+    Call Method    ${chrome_options}    add_argument    --no-sandbox
+    Call Method    ${chrome options}    add_experimental_option    prefs    ${prefs}
+    Create Webdriver    driver_name=Chrome    alias=google    chrome_options=${chrome_options}   
+    Go To    ${URL}
+    Maximize Browser Window
+    Set Selenium Speed          ${selenium_speed}
+    Set Selenium Implicit Wait  ${selenium_wait}
+    Set Selenium Timeout	    ${selenium_wait}
+`
+
