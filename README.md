@@ -21,7 +21,7 @@
 
 ### Execute with docker
 
-docker run --rm -v $(pwd):/workspace -w /workspace robotvozybase:latest python3 -m robot --outputdir ./Report .
+`docker run --rm -v $(pwd):/workspace -w /workspace robotvozybase:latest python3 -m robot --outputdir ./Report .`
 
 ### Local chorme driver instance for robot
 
