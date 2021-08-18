@@ -25,7 +25,7 @@
 
 ### Local chorme driver instance for robot
 
-Open Chrome Browser
+`Open Chrome Browser
     ${disabled}    Create List    Chrome PDF Viewer
     ${prefs}    Create Dictionary    download.default_directory=${OUTPUT DIR}     plugins.plugins_disabled=${disabled}
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
@@ -37,5 +37,5 @@ Open Chrome Browser
     Maximize Browser Window
     Set Selenium Speed          ${selenium_speed}
     Set Selenium Implicit Wait  ${selenium_wait}
-    Set Selenium Timeout	    ${selenium_wait}
+    Set Selenium Timeout	    ${selenium_wait}`
 
