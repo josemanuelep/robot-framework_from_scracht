@@ -23,7 +23,9 @@
 
 `docker run --rm -v $(pwd):/workspace -w /workspace robotvozybase:latest python3 -m robot --outputdir ./Report .`
 
-### Local chorme driver instance for robot
+`docker run --rm -v $(pwd):/workspace -w /workspace vozy:latest python3 -m robot .`
+
+### Local chorme driver instance for robot .
 
 Open Chrome Browser
     ${disabled}    Create List    Chrome PDF Viewer
