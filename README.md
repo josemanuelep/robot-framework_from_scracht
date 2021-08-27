@@ -19,6 +19,10 @@
 
 `source /home/jomanuepa/robot/bin/activate`
 
+### Execute with no logs and reports
+
+`robot --report NONE --log NONE --output NONE`
+
 ### Execute with docker
 
 `docker run --rm -v $(pwd):/workspace -w /workspace robotvozybase:latest python3 -m robot --outputdir ./Report .`
