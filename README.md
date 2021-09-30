@@ -7,6 +7,7 @@
 
 ### Save reports
 
+
 `robot -r ./Report/report.html -o ./Report/output.xml -l ./Report/logs.html`
 
 ### Usefull Links
@@ -44,6 +45,7 @@ Open Chrome Browser
     Set Selenium Speed          ${selenium_speed}
     Set Selenium Implicit Wait  ${selenium_wait}
     Set Selenium Timeout	    ${selenium_wait}
+    
     
     
 
