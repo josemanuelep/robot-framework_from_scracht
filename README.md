@@ -42,8 +42,11 @@ Open Chrome Browser
     Create Webdriver    driver_name=Chrome    alias=google    chrome_options=${chrome_options}   
     Go To    ${URL}
     Maximize Browser Window
+    
     Set Selenium Speed          ${selenium_speed}
+    
     Set Selenium Implicit Wait  ${selenium_wait}
+    
     Set Selenium Timeout	    ${selenium_wait}
     
     
