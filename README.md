@@ -50,5 +50,7 @@ Open Chrome Browser
     Set Selenium Timeout	    ${selenium_wait}
     
     
-    
+### Chormedriver path windows default
+
+**C:\Users\palac\AppData\Local\Programs\Python\Python39**
 
